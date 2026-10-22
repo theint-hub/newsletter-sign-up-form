@@ -4,6 +4,10 @@
     --white: hsl(0, 0%, 100%);
     --text:hsl(235, 18%, 26%);
     --grey: hsl(0, 0%,58%);
+    --shadow: 0 30px 60px hsla(234, 29%, 20%, 0.25);
+    --gradient-pink: hsl(345, 100%, 66%);
+    --gradient-orange: hsl(12, 100%, 62%);
+    --error-bg: hsl(5, 100%, 95%);
 }
 
 *{
@@ -43,7 +47,7 @@ p{
     background: var(--white);
     padding: 24px;
     border-radius: 36px;
-    box-shadow: 0 30px 60px hsla(234, 29%, 20%, 0.25);
+    box-shadow: var(--shadow);
 }
 
 .subscribe-section{
@@ -100,12 +104,12 @@ label{
     color: var(--dark-blue);
 }
 
-#email-label{
+.email-label{
     display: flex;
     justify-content: space-between;
 }
 
-#email-error{
+.email-error{
     font-size: 0.75rem;
     font-weight: 700;
     color: var(--primary);
@@ -126,7 +130,7 @@ input:focus{
 
 .input-error{
     border-color: var(--primary);
-    background: hsl(5, 100%, 95%);
+    background: var(--error-bg);
     color: var(--primary);
 }
 
@@ -144,7 +148,7 @@ button{
 }
 
 button:hover{
-    background: linear-gradient(90deg, hsl(345,100%, 66%), hsl(12,100%,62%));
+    background: linear-gradient(90deg, var(--gradient-pink), var(--gradient-orange));
     box-shadow: 0 16px 32px hsla(4, 100%, 67%, 0.4);
 }
 
@@ -152,7 +156,7 @@ button:hover{
     display: none;
 }
 
-#subscribe-wrapper{
+.subscribe-wrapper{
     width: 100%;
     max-width: 504px;
 }
@@ -163,7 +167,7 @@ button:hover{
     border-radius: 36px;
     display: flex;
     flex-direction: column;
-    box-shadow: 0 30px 60px hsla(234, 29%, 20%, 0.25);
+    box-shadow: var(--shadow);
 }
 
 
@@ -186,7 +190,7 @@ button:hover{
     margin-top: 0;
 }
 
-@media (max-width: 900px){
+@media (max-width: 56.25rem){
     body{
         padding: 0;
     }
@@ -217,8 +221,8 @@ button:hover{
     }
 }
 
-@media (max-width: 540px){
-    #subscribe-wrapper{
+@media (max-width: 33.75rem){
+    .subscribe-wrapper{
         max-width: none;
     }
     .subscribe{
