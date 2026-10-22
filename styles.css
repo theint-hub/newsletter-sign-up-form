@@ -1,0 +1,235 @@
+:root{
+    --primary: hsl(4, 100%, 67%);
+    --dark-blue: hsl(234, 29%, 20%);
+    --white: hsl(0, 0%, 100%);
+    --text:hsl(235, 18%, 26%);
+    --grey: hsl(0, 0%,58%);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: var(--dark-blue);
+    font-family: "Roboto", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: var(--text);
+    line-height: 1.5;
+    padding: 16px;
+    font-size: 1rem;
+}
+
+h1{
+    font-size: 3.5rem;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 24px;
+    color: var(--dark-blue);
+}
+
+p{
+    margin-bottom: 24px;
+}
+
+.container{
+    width: 100%;
+    max-width: 928px;
+    background: var(--white);
+    padding: 24px;
+    border-radius: 36px;
+    box-shadow: 0 30px 60px hsla(234, 29%, 20%, 0.25);
+}
+
+.subscribe-section{
+   display: grid;
+   grid-template-columns: 1fr 400px;
+}
+
+.description {
+    display: flex;
+    flex-direction: column; 
+}
+
+.description-text{
+    padding: 0 64px 0 40px;
+    margin: auto 0;
+}
+
+.description-text li{
+    margin-top: 10px;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    
+}
+
+.description-text li::before{
+    content: url(assets/icon-list.svg);
+    flex-shrink: 0;
+}
+
+.sign-up{
+    display: block;
+}
+
+.sign-up img{
+    object-fit: cover;
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 16px;
+}
+
+form{
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+label{
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--dark-blue);
+}
+
+#email-label{
+    display: flex;
+    justify-content: space-between;
+}
+
+#email-error{
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+input{
+    font: inherit;
+    padding: 15px 24px;
+    border: 1px solid var(--grey);
+    border-radius: 8px;
+    color: var(--dark-blue);
+}
+
+input:focus{
+    outline: none;
+    border-color: var(--dark-blue);
+}
+
+.input-error{
+    border-color: var(--primary);
+    background: hsl(5, 100%, 95%);
+    color: var(--primary);
+}
+
+button{
+    font: inherit;
+    width: 100%;
+    margin-top: 16px;
+    padding: 16px;
+    border-radius: 8px;
+    border: none;
+    background: var(--dark-blue);
+    color: var(--white);
+    cursor: pointer;
+    font-weight: 700;
+}
+
+button:hover{
+    background: linear-gradient(90deg, hsl(345,100%, 66%), hsl(12,100%,62%));
+    box-shadow: 0 16px 32px hsla(4, 100%, 67%, 0.4);
+}
+
+.hidden{
+    display: none;
+}
+
+#subscribe-wrapper{
+    width: 100%;
+    max-width: 504px;
+}
+
+.subscribe{
+    background: var(--white);
+    padding: 48px 64px 64px;
+    border-radius: 36px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 30px 60px hsla(234, 29%, 20%, 0.25);
+}
+
+
+.subscribe img{
+    width: 64px;
+    height: 64px;
+    margin-bottom: 40px;
+}
+
+.subscribe h1{
+    font-size: 3.5rem;
+    line-height: 1;
+}
+
+.subscribe p{
+    margin-bottom: 40px;
+}
+
+.subscribe button{
+    margin-top: 0;
+}
+
+@media (max-width: 900px){
+    body{
+        padding: 0;
+    }
+    .container{
+        padding: 0;
+        border-radius: 0;
+        min-height: 100vh;
+    }
+    .subscribe-section{
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    .sign-up img{
+        display: block;
+        width: 100%;
+        height: 284px;
+        object-fit: cover;
+        border-radius: 0 0 16px 16px;
+    }
+    h1{
+        font-size: 2.5rem;
+    }
+    .description-text{
+        padding: 40px 24px;
+    }
+    .description-text li{
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 540px){
+    #subscribe-wrapper{
+        max-width: none;
+    }
+    .subscribe{
+        min-height: 100vh;
+        padding: 150px 24px 40px;
+        border-radius: 0;
+    }
+    .subscribe h1{
+        font-size: 2.5rem;
+    }
+    .subscribe button{
+        margin-top: auto;
+    }
+}
